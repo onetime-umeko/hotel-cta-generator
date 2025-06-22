@@ -19,6 +19,9 @@
     input[type="text"] {
       width: 100%;
     }
+    #copyButton {
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -40,7 +43,8 @@
   </form>
 
   <h2>生成されたHTML</h2>
-  <textarea id="output" rows="20"></textarea>
+  <textarea id="output" rows="20"></textarea><br>
+  <button id="copyButton" onclick="copyHTML()">コピー</button>
 
   <script src="script.js"></script>
 </body>
