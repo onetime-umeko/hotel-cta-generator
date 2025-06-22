@@ -14,9 +14,7 @@ function generateHTML() {
       </a>
     </div>
     <div class="tomarebalink-info">
-      <div class="tomarebalink-name">
-        <a href="${rakutenURL}" target="_blank">${hotelName}</a>
-      </div>
+      <div class="tomarebalink-name">${hotelName}</div>
       <div class="tomarebalink-link1">`;
 
   if (rakutenURL) {
@@ -55,4 +53,11 @@ function generateHTML() {
 </div>`;
 
   document.getElementById("output").value = html;
+}
+
+function copyHTML() {
+  const textarea = document.getElementById("output");
+  textarea.select();
+  document.execCommand("copy");
+  alert("HTMLがコピーされました！");
 }
