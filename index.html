@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>アフィリエイトリンク作成ツール</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    textarea {
+      width: 100%;
+      font-family: monospace;
+    }
+    input[type="text"] {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h1>ホテル用アフィリエイトリンクパーツ生成</h1>
+
+  <form id="linkForm">
+    <h2>ホテル情報</h2>
+    <label>ホテル名：<input type="text" id="hotelName" placeholder="例：ヒューイットリゾート那覇" /></label>
+    <label>画像URL：<input type="text" id="imageURL" placeholder="例：https://...jpg" /></label>
+
+    <h2>リンク情報（表示するものだけ入力）</h2>
+    <label>楽天リンク：<input type="text" id="rakutenURL" placeholder="例：https://..." /></label>
+    <label>じゃらんリンク：<input type="text" id="jalanURL" placeholder="例：https://..." /></label>
+    <label>agodaリンク：<input type="text" id="agodaURL" placeholder="例：https://..." /></label>
+    <label>Expediaリンク：<input type="text" id="expediaURL" placeholder="例：https://..." /></label>
+
+    <br>
+    <button type="button" onclick="generateHTML()">HTML生成</button>
+  </form>
+
+  <h2>生成されたHTML</h2>
+  <textarea id="output" rows="20"></textarea>
+
+  <script src="script.js"></script>
+</body>
+</html>
