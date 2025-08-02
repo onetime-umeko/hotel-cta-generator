@@ -1,63 +1,45 @@
 function generateHTML() {
-  const hotelName = document.getElementById("hotelName").value;
-  const imageURL = document.getElementById("imageURL").value;
-  const rakutenURL = document.getElementById("rakutenURL").value;
-  const jalanURL = document.getElementById("jalanURL").value;
-  const agodaURL = document.getElementById("agodaURL").value;
-  const expediaURL = document.getElementById("expediaURL").value;
+  const hotelName = document.getElementById('hotelName').value.trim();
+  const imageURL = document.getElementById('imageURL').value.trim();
+  const rakutenURL = document.getElementById('rakutenURL').value.trim();
+  const jalanURL = document.getElementById('jalanURL').value.trim();
+  const agodaURL = document.getElementById('agodaURL').value.trim();
+  const expediaURL = document.getElementById('expediaURL').value.trim();
+  const ikkyuURL = document.getElementById('ikkyuURL').value.trim();
+  const recommendComment = document.getElementById('recommendComment').value.trim();
 
-  let html = `<div class="cstmreba">
-  <div class="tomarebalink-box">
-    <div class="tomarebalink-image">
-      <a href="${rakutenURL}" target="_blank">
-        <img src="${imageURL}" width="300" style="border: none;" />
-      </a>
-    </div>
-    <div class="tomarebalink-info">
-      <div class="tomarebalink-name">${hotelName}</div>
-      <div class="tomarebalink-link1">`;
-
-  if (rakutenURL) {
-    html += `
-        <div class="shoplinkrakuten">
-          <a href="${rakutenURL}" target="_blank">楽天トラベル</a>
-        </div>`;
-  }
-
-  if (jalanURL) {
-    html += `
-        <div class="shoplinkjalan">
-          <a href="${jalanURL}" target="_blank">じゃらん</a>
-        </div>`;
-  }
-
-  if (agodaURL) {
-    html += `
-        <div class="shoplinkagoda">
-          <a href="${agodaURL}" target="_blank" rel="nofollow noopener">agodaで見る</a>
-        </div>`;
-  }
-
-  if (expediaURL) {
-    html += `
-        <div class="shoplinkexpedia">
-          <a href="${expediaURL}" target="_blank" rel="nofollow noopener">Expediaで見る</a>
-        </div>`;
-  }
-
-  html += `
-      </div>
-    </div>
-    <div class="booklink-footer"></div>
+  const html = `
+<div class="hotel-cta-block">
+  <div class="hotel-cta-image">
+    <img src="${imageURL}" alt="${hotelName}">
   </div>
-</div>`;
 
-  document.getElementById("output").value = html;
+  <p class="cta-label">＼ ここから予約できます ／</p>
+
+  <div class="hotel-name">${hotelName}</div>
+  ${recommendComment ? `<p class="hotel-cta-text">${recommendComment}</p>` : ''}
+
+  <div class="hotel-cta-buttons">
+    ${rakutenURL ? `<a class="cta-btn rakuten" href="${rakutenURL}">楽天トラベルで料金を見る</a>` : ''}
+    ${jalanURL ? `<a class="cta-btn jalan" href="${jalanURL}">じゃらんで空き状況を確認</a>` : ''}
+    ${agodaURL ? `<a class="cta-btn agoda" href="${agodaURL}">Agodaでプランを見る</a>` : ''}
+    ${expediaURL ? `<a class="cta-btn expedia" href="${expediaURL}">Expediaで予約する</a>` : ''}
+    ${ikkyuURL ? `<a class="cta-btn ikkyu" href="${ikkyuURL}">一休で見る</a>` : ''}
+  </div>
+
+  <p class="coupon-guide-link">
+    ▶ 最新クーポン情報は
+    <a href="/category/deals/" target="_blank">こちらのお得情報ページ</a>にまとめています。
+  </p>
+</div>
+`;
+
+  document.getElementById('output').value = html;
 }
 
 function copyHTML() {
-  const textarea = document.getElementById("output");
+  const textarea = document.getElementById('output');
   textarea.select();
-  document.execCommand("copy");
-  alert("HTMLがコピーされました！");
+  document.execCommand('copy');
+  alert('HTMLをコピーしました！');
 }
