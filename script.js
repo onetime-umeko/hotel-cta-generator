@@ -15,11 +15,11 @@ function generateHTML() {
   <div class="hotel-name">${hotelName}</div>
 
   <div class="hotel-cta-buttons">
-    ${rakutenURL ? `<a class="cta-btn rakuten" href="${rakutenURL}">楽天トラベルで料金を見る</a>` : ''}
-    ${jalanURL ? `<a class="cta-btn jalan" href="${jalanURL}">じゃらんで空き状況を確認</a>` : ''}
-    ${agodaURL ? `<a class="cta-btn agoda" href="${agodaURL}">Agodaでプランを見る</a>` : ''}
-    ${expediaURL ? `<a class="cta-btn expedia" href="${expediaURL}">Expediaで予約する</a>` : ''}
-    ${ikkyuURL ? `<a class="cta-btn ikkyu" href="${ikkyuURL}">一休で見る</a>` : ''}
+    ${rakutenURL ? `<a class="cta-btn rakuten" href="${rakutenURL}" target="_blank">楽天トラベルで料金を見る</a>` : ''}
+    ${jalanURL ? `<a class="cta-btn jalan" href="${jalanURL}" target="_blank">じゃらんで空き状況を確認</a>` : ''}
+    ${agodaURL ? `<a class="cta-btn agoda" href="${agodaURL}" target="_blank">Agodaでプランを見る</a>` : ''}
+    ${expediaURL ? `<a class="cta-btn expedia" href="${expediaURL}" target="_blank">Expediaで予約する</a>` : ''}
+    ${ikkyuURL ? `<a class="cta-btn ikkyu" href="${ikkyuURL}" target="_blank">一休で見る</a>` : ''}
   </div>
 
   <p class="coupon-guide-link">
