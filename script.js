@@ -24,7 +24,7 @@ function generateHTML() {
 
   <p class="coupon-guide-link">
     ▶ 最新クーポン情報は
-    <a href="https://fufunotabi.com/otokumatome" target="_blank">こちらのお得情報ページ</a>にまとめています。
+    <a href="https://fufunotabi.com/otokumatome">こちらのお得情報ページ</a>にまとめています。
   </p>
 </div>
 `;
