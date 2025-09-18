@@ -8,25 +8,13 @@ function generateHTML() {
   const ikkyuURL = document.getElementById('ikkyuURL').value.trim();
 
   const html = `
-<div class="hotel-cta-block">
-  <div class="hotel-cta-image">
-    <img src="${imageURL}" alt="${hotelName}">
-  </div>
-  <div class="hotel-name">${hotelName}</div>
-
-  <div class="hotel-cta-buttons">
-    ${rakutenURL ? `<a class="cta-btn rakuten" href="${rakutenURL}" target="_blank">楽天トラベルで料金を見る</a>` : ''}
-    ${jalanURL ? `<a class="cta-btn jalan" href="${jalanURL}" target="_blank">じゃらんで空き状況を確認</a>` : ''}
-    ${agodaURL ? `<a class="cta-btn agoda" href="${agodaURL}" target="_blank">Agodaでプランを見る</a>` : ''}
-    ${expediaURL ? `<a class="cta-btn expedia" href="${expediaURL}" target="_blank">Expediaで予約する</a>` : ''}
-    ${ikkyuURL ? `<a class="cta-btn ikkyu" href="${ikkyuURL}" target="_blank">一休で見る</a>` : ''}
-  </div>
-
-  <p class="coupon-guide-link">
-    ▶ 最新クーポン情報は
-    <a href="https://fufunotabi.com/otokumatome">こちらのお得情報ページ</a>にまとめています。
-  </p>
-</div>
+<div class="cstmreba"><div class="tomarebalink-box"><div class="tomarebalink-image"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3499895&amp;pid=887321921" height="1" width="0" border="0" /><img src="${imageURL}"  alt="${hotelName}" width="300" style="border: none;" /></div><div class="tomarebalink-info"><div class="tomarebalink-name"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3499895&amp;pid=887321921" height="1" width="0" border="0" />${hotelName}</div><div class="tomarebalink-link1">
+${rakutenURL ? `<div class="shoplinkrakuten"><a href="${rakutenURL}" target="_blank" rel="nofollow noopener" title="楽天トラベル" class="attaterrace-rakuten-btn">楽天トラベルで見る<img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3499895&amp;pid=887321921" height="1" width="0" border="0" /></a></div>` : ''}
+${jalanURL ? `<div class="shoplinkjalan"><a href="${jalanURL}" target="_blank" rel="nofollow noopener" title="じゃらん" class="attaterrace-jaran-btn">じゃらんで見る<img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3499895&amp;pid=887321935" height="1" width="1" border="0" /></a></div>` : ''}
+${ikkyuURL ? `<div class="shoplinkikyu"><a href="${ikkyuURL}" target="_blank" rel="nofollow noopener" title="一休" class="attaterrace-ikkyu-btn">一休で見る<img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3499895&amp;pid=886802104" height="1" width="1" border="0" /></a></div>` : ''}
+${agodaURL ? `<div class="shoplinkagoda"><a href="${agodaURL}" target="_blank" rel="nofollow noopener" title="agoda" class="attaterrace-agoda-btn">agodaで見る<img src="https://www16.a8.net/0.gif?a8mat=3T6MQF+490F8Y+4X1W+60OXE" height="1" width="1" border="0" /></a></div>` : ''}
+${expediaURL ? `<div class="shoplinkexpedia"><a href="${expediaURL}" target="_blank" rel="nofollow noopener" title="Expedia" class="attaterrace-expedia-btn">Expediaで見る<img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3499895&amp;pid=886332502" height="1" width="1" border="0" /></a></div>` : ''}
+</div></div><div class="booklink-footer"></div></div></div>
 `;
 
   document.getElementById('output').value = html;
@@ -37,4 +25,17 @@ function copyHTML() {
   textarea.select();
   document.execCommand('copy');
   alert('HTMLをコピーしました！');
+}
+
+function clearForm() {
+  // 入力フィールドをすべて空にする
+  document.getElementById("hotelName").value = "";
+  document.getElementById("imageURL").value = "";
+  document.getElementById("rakutenURL").value = "";
+  document.getElementById("jalanURL").value = "";
+  document.getElementById("agodaURL").value = "";
+  document.getElementById("expediaURL").value = "";
+
+  // 出力HTMLも空にする
+  document.getElementById("output").value = "";
 }
