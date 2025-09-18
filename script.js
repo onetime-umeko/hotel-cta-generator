@@ -35,7 +35,7 @@ function clearForm() {
   document.getElementById("jalanURL").value = "";
   document.getElementById("agodaURL").value = "";
   document.getElementById("expediaURL").value = "";
-
+  document.getElementById("ikkyuURL").value = "";
   // 出力HTMLも空にする
   document.getElementById("output").value = "";
 }
